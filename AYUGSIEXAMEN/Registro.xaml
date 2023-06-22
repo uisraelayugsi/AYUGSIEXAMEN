@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AYUGSIEXAMEN.Registro">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblUsuario" FontSize="14" TextColor="Red"  HorizontalTextAlignment="End"/>
+            <Label Text="REGISTRO" FontSize="24"   HorizontalTextAlignment="Center"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Nombre"  Grid.Row="0" Grid.Column="0"  Style="{StaticResource LabelStyle}"/>
+                <Label Text="Apellido" Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelStyle}"/>
+                <Label Text="Edad" Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelStyle}" />
+
+
+                <Entry x:Name="txtNombre"  Placeholder="Nombre" Grid.Row="1" Grid.Column="0"  />
+                <Entry x:Name="txtApellido"  Placeholder="Apellido" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="txtEdad"   Keyboard="Numeric"  Placeholder="Edad" Grid.Row="1" Grid.Column="2"/>
+
+                <Label Text="" Grid.Row="2" Grid.Column="0" />
+                <Label Text="" Grid.Row="2" Grid.Column="1" />
+                <Label Text="" Grid.Row="2" Grid.Column="2" />
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Fecha"  Grid.Row="0" Grid.Column="0" />
+                <Label Text="Pais" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Ciudad" Grid.Row="2" Grid.Column="0" />
+                <Label Text="Monto Inicial "  Grid.Row="3" Grid.Column="0" />
+                <Label Text="Pago mensual" Grid.Row="4" Grid.Column="0" />
+
+                <Button x:Name="btnPagoMensual" Text="PagoMensual" Clicked="btnPagoMensual_Clicked"  Grid.Row="5" Grid.Column="0" />
+
+
+                <DatePicker x:Name="dpFecha" Grid.Row="0" Grid.Column="1" />
+                <Picker x:Name="pkPais"  Title="Pais"  Grid.Row="1" Grid.Column="1" >
+                    <Picker.Items>
+                        <x:String>ECUADOR</x:String>
+                        <x:String>COLOMBIA</x:String>
+                        <x:String>PERU</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="pkCiudad"  Title="Ciudad"  Grid.Row="2" Grid.Column="1" >
+                    <Picker.Items>
+                        <x:String>QUITO</x:String>
+                        <x:String>CUENCA</x:String>
+                        <x:String>AMBATO</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry x:Name="txtMonto"  Keyboard="Numeric" Placeholder="Ingrese Monto Inicial" TextChanged="txtMonto_TextChanged" Grid.Row="3" Grid.Column="1" />
+                <Entry x:Name="txtPago" IsReadOnly="True" Grid.Row="4" Grid.Column="1"/>
+
+                <Button x:Name="btnResumen" Text="RESUMEN" Clicked="btnResumen_Clicked"  Grid.Row="5" Grid.Column="1" />
+
+
+
+
+
+
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
